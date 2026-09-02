@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>蕭羽呈 × 劉雅蘭 ｜ 2026.11.22</title>
+<meta name="description" content="誠摯邀請您蒞臨婚禮，與我們一同分享人生最幸福的時刻。2026年11月22日，晶宴・日光香頌 B2 圓劇場。">
+<meta property="og:title" content="蕭羽呈 × 劉雅蘭 婚禮邀請">
+<meta property="og:description" content="2026.11.22（日）11:30 入席｜晶宴・日光香頌 B2 圓劇場">
+<meta property="og:image" content="cover.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<script>document.documentElement.className="js";</script>
+
+<style>
+/* ============================================================
+   蕭羽呈 × 劉雅蘭 ｜ 電子喜帖（單一檔案版）
+   同一層需要這三個圖檔：seal.png / cover.jpg / invitation.jpg
+   音樂（選用）：music.mp3
+   ============================================================ */
+
+:root{
+  --ink:#2B4362;
+  --ink-soft:#415C85;
+  --paper:#FBF8F4;
+  --wax:#C79A8B;
+  --line:#D3C8B8;
+  --serif:"Cormorant Garamond","Noto Serif TC",Georgia,serif;
+  --han:"Noto Serif TC","Cormorant Garamond",serif;
+  --script:"Pinyon Script",cursive;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--han);
+  font-weight:300;
+  font-size:1.06rem;
+  line-height:1.95;
+  letter-spacing:.04em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+html.js body.is-sealed{overflow:hidden;height:100%}
+
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
+
+/* ─────────── 開場：信封 + 蕾絲蝴蝶結 + 火漆印章 ─────────── */
+
+.seal-stage{display:none}
+html.js .seal-stage{
+  position:fixed;inset:0;z-index:100;
+  display:grid;place-items:center;
+  background:radial-gradient(115% 85% at 50% 20%,#F8F3EC 0%,#E4DBCE 48%,#CABDAB 100%);
+  transition:opacity .7s ease,visibility .7s;
+}
+.seal-stage.gone{opacity:0;visibility:hidden;pointer-events:none}
+
+.envelope{
+  position:relative;
+  width:min(76vw,318px);
+  aspect-ratio:3/4;
+  perspective:1400px;
+  filter:drop-shadow(0 26px 46px rgba(96,76,56,.32));
+}
+
+/* 內卡（收在信封裡，開封後升起） */
+.env-card{
+  position:absolute;left:7%;right:7%;top:6%;height:88%;
+  z-index:0;
+  background:linear-gradient(160deg,#FFFFFF,#F8F3EB);
+  border:1px solid rgba(210,196,176,.7);
+  box-shadow:0 10px 22px rgba(140,118,96,.16);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  transition:transform 1s cubic-bezier(.22,.9,.28,1) .55s,z-index 0s linear .55s;
+}
+.env-card-mono{
+  font-family:var(--serif);font-size:2.9rem;font-weight:300;
+  letter-spacing:.12em;color:var(--ink);
+}
+.env-card-mono .amp{font-family:var(--script);font-size:1.9rem;color:var(--wax);margin:0 .06em}
+.env-card-date{font-size:.92rem;letter-spacing:.36em;color:var(--ink-soft);text-indent:.36em}
+
+/* 信封背板 */
+.env-back{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(152deg,#FFFEFC,#F6EFE5 74%,#EADFCF);
+  border:1px solid rgba(186,168,144,.7);
+}
+
+/* 信封前袋 */
+.env-body{
+  position:absolute;inset:0;z-index:5;
+  background:linear-gradient(155deg,#FFFDF9,#F3EBDF 68%,#E6DACA);
+  clip-path:polygon(0 26%,50% 61%,100% 26%,100% 100%,0 100%);
+  box-shadow:0 -2px 6px rgba(150,128,102,.14);
+}
+
+/* 信封封口 */
+.env-flap{
+  position:absolute;top:0;left:0;right:0;height:62%;
+  z-index:6;transform-origin:top center;
+  background:linear-gradient(178deg,#FFFEFB,#F5EDE2 70%,#E3D6C4);
+  filter:drop-shadow(0 3px 4px rgba(150,128,102,.16));
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transition:transform 1.05s cubic-bezier(.5,0,.2,1) .3s,z-index 0s linear .7s;
+}
+.opened .env-flap{transform:rotateX(-174deg);z-index:3}
+.opened .env-card{transform:translateY(-34%);z-index:4}
+
+/* 珍珠 */
+.pearl{
+  position:absolute;z-index:7;width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#fff,#EDE4D8 55%,#CFC1AE);
+  box-shadow:0 1px 2px rgba(140,120,100,.35);
+  transition:opacity .5s ease;
+}
+.p1{top:12%;left:14%}.p2{top:18%;right:12%}
+.p3{bottom:14%;left:11%}.p4{bottom:10%;right:16%}
+.opened .pearl{opacity:0}
+
+/* 火漆印章 */
+.seal{
+  position:absolute;z-index:9;
+  top:50%;left:50%;width:36%;aspect-ratio:1;
+  padding:0;border-radius:50%;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(0 8px 16px rgba(126,96,80,.45));
+  transition:transform .5s ease,opacity .45s ease;
+  animation:sealPulse 2.8s ease-in-out infinite;
+}
+.seal img{width:100%;height:100%;border-radius:50%}
+@keyframes sealPulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-50%) scale(1.045)}
+}
+.opened .seal{animation:none;transform:translate(-50%,-50%) scale(.72) rotate(-12deg);opacity:0}
+
+/* ─────────── 主體共用 ─────────── */
+
+html.js #main{opacity:0;transition:opacity .9s ease .2s}
+html.js #main.on{opacity:1}
+
+.section{padding:74px 26px;max-width:520px;margin:0 auto;text-align:center}
+
+.eyebrow{
+  margin:0 0 10px;
+  font-family:var(--serif);
+  font-size:1rem;letter-spacing:.34em;
+  color:var(--ink-soft);text-indent:.34em;
+}
+.script{font-family:var(--han);font-weight:400;font-size:1.62rem;letter-spacing:.12em;margin:0 0 6px}
+.lead{margin:0 0 26px;font-size:1.05rem;color:#4F6B8C;letter-spacing:.12em}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:0 auto 30px;width:70%}
+
+/* ─────────── 封面 ─────────── */
+
+.cover{position:relative;background:#EAF0F4}
+.cover-img{width:100%;height:auto}
+.scroll-cue{
+  position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+  width:1px;height:46px;background:rgba(255,255,255,.55);overflow:hidden;
+}
+.scroll-cue span{
+  position:absolute;top:-46px;left:0;width:1px;height:46px;background:#fff;
+  animation:trickle 2.2s cubic-bezier(.6,0,.4,1) infinite;
+}
+@keyframes trickle{0%{top:-46px}60%,100%{top:46px}}
+
+/* ─────────── 刮開日期 ─────────── */
+
+.scratch-sec{padding-top:66px}
+
+.arch{
+  background:linear-gradient(170deg,#FFFDFA,#F6F0E8);
+  border:1px solid var(--line);
+  border-radius:210px 210px 10px 10px/62% 62% 3% 3%;
+  padding:56px 24px 52px;position:relative;
+}
+.arch::before{
+  content:"";position:absolute;inset:9px;
+  border:1px solid rgba(211,200,184,.55);
+  border-radius:200px 200px 6px 6px/60% 60% 2% 2%;
+  pointer-events:none;
+}
+
+.scratch-row{display:flex;gap:10px;justify-content:center}
+.sc-cell{
+  position:relative;flex:1 1 0;max-width:122px;aspect-ratio:3/4;
+  border:1px solid rgba(200,186,168,.8);
+  background:#fff;overflow:hidden;
+}
+.sc-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.sc-face b{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,9vw,2.7rem);line-height:1;color:var(--ink);letter-spacing:.02em;
+}
+.sc-face small{font-size:.86rem;letter-spacing:.3em;color:#6F6250;text-indent:.3em}
+.sc-cover{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .5s ease}
+.sc-cell.done .sc-cover{opacity:0;pointer-events:none}
+
+/* ─────────── 倒數 ─────────── */
+
+.count-sec{padding-top:52px;padding-bottom:52px}
+.count{display:flex;align-items:flex-start;justify-content:center;gap:4px;margin-top:4px}
+.c-unit{min-width:70px}
+.c-unit b{
+  display:block;font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.5rem,12vw,3.4rem);line-height:1.1;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.c-unit small{display:block;font-size:.88rem;letter-spacing:.26em;color:#6F6250;text-indent:.26em}
+.c-sep{font-family:var(--serif);font-size:clamp(1.9rem,9vw,2.5rem);line-height:1.35;color:var(--line)}
+.count-note{margin:20px 0 0;font-size:1rem;letter-spacing:.16em;color:#4F6B8C}
+
+/* ─────────── Dress Code ─────────── */
+
+.dress-sec{padding-top:44px;padding-bottom:52px}
+.dress-sec .lead{margin-bottom:30px}
+.swatches{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(12px,4.6vw,22px)}
+.swatches li{
+  width:clamp(46px,13.5vw,58px);aspect-ratio:1;border-radius:50%;
+  background:var(--c);
+  border:1px solid rgba(150,134,112,.34);
+  box-shadow:0 3px 9px rgba(140,120,100,.14),inset 0 -4px 8px rgba(255,255,255,.45);
+}
+
+/* ─────────── 喜帖本體 ─────────── */
+
+.card-sec{padding-top:58px}
+.card-frame{border:1px solid var(--line);padding:9px;background:#fff;box-shadow:0 16px 36px rgba(140,120,100,.14)}
+.card-note{margin:18px 0 0;font-size:.92rem;letter-spacing:.18em;color:#7B6D57}
+
+/* ─────────── 結語 ─────────── */
+
+.closing{padding:72px 22px 60px;background:linear-gradient(180deg,var(--paper),#F1EDE6);max-width:none}
+.closing p{margin:0 0 26px;font-size:1.12rem;line-height:2.15;color:#374F6D;letter-spacing:.08em}
+.closing .sign{font-family:var(--script);font-size:2.5rem;color:var(--ink);letter-spacing:.02em;margin:30px 0 34px;line-height:1.4}
+
+.foot{
+  padding:26px 0 40px;text-align:center;background:#F1EDE6;
+  font-family:var(--serif);font-size:.92rem;letter-spacing:.4em;color:#7B6D57;text-indent:.4em;
+}
+
+/* ─────────── 音樂鍵 ─────────── */
+
+.music-btn{
+  position:fixed;right:16px;bottom:16px;z-index:90;
+  width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(251,248,244,.9);
+  border:1px solid var(--line);
+  box-shadow:0 4px 14px rgba(120,100,80,.2);
+}
+.music-btn svg{width:20px;height:20px;fill:var(--ink)}
+.music-btn .ico-play{display:none}
+.music-btn.paused .ico-play{display:block}
+.music-btn.paused .ico-pause{display:none}
+.music-btn[hidden]{display:none}
+
+@media (min-width:600px){
+  .section{max-width:560px}
+  .cover{display:grid;place-items:center;min-height:100svh}
+  .cover-img{max-height:100svh;object-fit:contain;margin:0 auto}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+}
+</style>
+</head>
+<body class="is-sealed">
+
+<audio id="bgm" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ═══ 一、開場：火漆印章 ═══ -->
+<div class="seal-stage" id="stage">
+  <div class="envelope" id="envelope">
+
+    <div class="env-card" aria-hidden="true">
+      <span class="env-card-mono">S<span class="amp">&amp;</span>O</span>
+      <span class="env-card-date">2026 . 11 . 22</span>
+    </div>
+    <div class="env-back"></div>
+    <div class="env-body"></div>
+    <div class="env-flap"></div>
+
+    <span class="pearl p1"></span><span class="pearl p2"></span>
+    <span class="pearl p3"></span><span class="pearl p4"></span>
+
+    <button class="seal" id="seal" type="button" aria-label="開啟喜帖">
+      <img src="seal.png" alt="">
+    </button>
+
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ═══ 二、封面 ═══ -->
+  <section class="cover">
+    <img class="cover-img" src="cover.jpg" alt="蕭羽呈與劉雅蘭的婚紗照" fetchpriority="high">
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ═══ 三、刮開日期 ═══ -->
+  <section class="section scratch-sec" id="date">
+    <div class="arch">
+      <p class="eyebrow">Save the Date</p>
+      <h2 class="script">敬邀您記下這一天</h2>
+      <p class="lead">輕輕刮開</p>
+      <div class="scratch-row">
+        <div class="sc-cell">
+          <div class="sc-face"><b>22</b><small>日</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+        <div class="sc-cell">
+          <div class="sc-face"><b>11</b><small>月</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+        <div class="sc-cell">
+          <div class="sc-face"><b>2026</b><small>年</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 四、倒數 ═══ -->
+  <section class="section count-sec">
+    <p class="eyebrow">距離婚禮還有</p>
+    <div class="count">
+      <div class="c-unit"><b id="cD">--</b><small>天</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cH">--</b><small>時</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cM">--</b><small>分</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cS">--</b><small>秒</small></div>
+    </div>
+    <p class="count-note" id="countNote">2026 年 11 月 22 日 11:30 入席</p>
+  </section>
+
+  <!-- ═══ 五、Dress Code ═══ -->
+  <section class="section dress-sec">
+    <p class="eyebrow">Dress Code</p>
+    <p class="lead">自由參考</p>
+    <ul class="swatches">
+      <li style="--c:#FCFCFC"></li>
+      <li style="--c:#E2D5CC"></li>
+      <li style="--c:#CDB9B0"></li>
+      <li style="--c:#C4C1C2"></li>
+      <li style="--c:#C9D1DD"></li>
+    </ul>
+  </section>
+
+  <!-- ═══ 六、喜帖本體 ═══ -->
+  <section class="section card-sec">
+    <div class="card-frame">
+      <img src="invitation.jpg" alt="喜帖：蕭羽呈 × 劉雅蘭，2026年11月22日（日），11:30 入席、12:00 開席，地點晶宴・日光香頌 B2 圓劇場，台北市中山區民生東路三段8號B2，電話 02-2517-9977。">
+    </div>
+    <p class="card-note">長按圖片可儲存到相簿</p>
+  </section>
+
+  <!-- ═══ 七、結語 ═══ -->
+  <section class="section closing">
+    <div class="rule" aria-hidden="true"></div>
+    <p>我們的名字寫在請帖上，<br>但這一天真正想見的，是你。</p>
+    <p>謝謝你陪我們走過那些<br>很平常的日子，<br>也謝謝你願意空出這個中午。</p>
+    <p>那天，我們在圓劇場等你。</p>
+    <p class="sign">Shany &amp; Orange</p>
+    <div class="rule" aria-hidden="true"></div>
+  </section>
+
+  <footer class="foot">2026 . 11 . 22</footer>
+</main>
+
+<button class="music-btn" id="musicBtn" type="button" aria-label="暫停音樂" hidden>
+  <svg viewBox="0 0 24 24" class="ico-pause" aria-hidden="true"><rect x="7.5" y="6" width="3" height="12" rx="1"/><rect x="13.5" y="6" width="3" height="12" rx="1"/></svg>
+  <svg viewBox="0 0 24 24" class="ico-play" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ==== 可修改的設定 ==== */
+  var WEDDING_TIME = '2026-11-22T11:30:00+08:00';  // 入席時間
+  var SCRATCH_RATIO = 0.5;                          // 刮開多少比例自動全開
+  /* ====================== */
+
+  var $ = function (s) { return document.querySelector(s); };
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 開場 ---- */
+  var stage = $('#stage'), seal = $('#seal'), main = $('#main'), opened = false;
+
+  seal.addEventListener('click', function () {
+    if (opened) return;
+    opened = true;
+    startMusic();
+    stage.classList.add('opened');
+    setTimeout(function () {
+      stage.classList.add('gone');
+      document.body.classList.remove('is-sealed');
+      main.classList.add('on');
+      setTimeout(function () { stage.remove(); }, 800);
+    }, reduceMotion ? 100 : 1850);
+  });
+
+  /* ---- 刮刮卡 ---- */
+  var cells = document.querySelectorAll('.sc-cell');
+
+  function paintCover(canvas) {
+    var cell = canvas.parentNode;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = cell.clientWidth, h = cell.clientHeight;
+    if (!w || !h) return null;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    var g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#F0E7DA'); g.addColorStop(0.45, '#FBF6EE'); g.addColorStop(1, '#E4D9C9');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(199,154,139,.55)'; ctx.lineWidth = 1;
+    ctx.strokeRect(6.5, 6.5, w - 13, h - 13);
+    ctx.globalCompositeOperation = 'destination-out';
+    return ctx;
+  }
+
+  function ratioCleared(ctx, canvas) {
+    var d = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    var clear = 0, total = 0;
+    for (var i = 3; i < d.length; i += 96) { total++; if (d[i] < 40) clear++; }
+    return total ? clear / total : 0;
+  }
+
+  cells.forEach(function (cell) {
+    var canvas = cell.querySelector('.sc-cover');
+    var ctx = paintCover(canvas);
+    if (!ctx) { cell.classList.add('done'); return; }
+    var drawing = false, tick = 0;
+
+    function scratch(e) {
+      var r = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.arc(e.clientX - r.left, e.clientY - r.top, 16, 0, Math.PI * 2);
+      ctx.fill();
+      if (++tick % 8 === 0 && ratioCleared(ctx, canvas) > SCRATCH_RATIO) cell.classList.add('done');
+    }
+
+    canvas.addEventListener('pointerdown', function (e) {
+      drawing = true; canvas.setPointerCapture(e.pointerId); scratch(e);
+    });
+    canvas.addEventListener('pointermove', function (e) { if (drawing) scratch(e); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) {
+      canvas.addEventListener(ev, function () {
+        if (!drawing) return;
+        drawing = false;
+        if (ratioCleared(ctx, canvas) > 0.22) cell.classList.add('done');
+      });
+    });
+  });
+
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt);
+    rt = setTimeout(function () {
+      cells.forEach(function (c) {
+        if (!c.classList.contains('done')) paintCover(c.querySelector('.sc-cover'));
+      });
+    }, 250);
+  });
+
+  /* ---- 倒數 ---- */
+  var target = new Date(WEDDING_TIME).getTime();
+  var elD = $('#cD'), elH = $('#cH'), elM = $('#cM'), elS = $('#cS'), note = $('#countNote');
+  var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
+
+  function tickDown() {
+    var left = target - Date.now();
+    if (left <= 0) {
+      elD.textContent = elH.textContent = elM.textContent = elS.textContent = '00';
+      note.textContent = '謝謝你陪我們走到這一天';
+      clearInterval(timer); return;
+    }
+    var s = Math.floor(left / 1000);
+    elD.textContent = Math.floor(s / 86400);
+    elH.textContent = pad(Math.floor(s / 3600) % 24);
+    elM.textContent = pad(Math.floor(s / 60) % 60);
+    elS.textContent = pad(s % 60);
+  }
+  tickDown();
+  var timer = setInterval(tickDown, 1000);
+
+  /* ---- 音樂 ---- */
+  var bgm = $('#bgm'), musicBtn = $('#musicBtn'), hasAudio = true;
+  bgm.addEventListener('error', function () { hasAudio = false; musicBtn.hidden = true; });
+
+  function startMusic() {
+    if (!hasAudio) return;
+    bgm.volume = 0;
+    var p = bgm.play();
+    if (p && p.catch) p.catch(function () { musicBtn.classList.add('paused'); });
+    musicBtn.hidden = false;
+    var v = 0;
+    var fade = setInterval(function () {
+      v += 0.04;
+      if (v >= 0.6) { v = 0.6; clearInterval(fade); }
+      bgm.volume = v;
+    }, 90);
+  }
+
+  musicBtn.addEventListener('click', function () {
+    if (bgm.paused) {
+      bgm.play(); musicBtn.classList.remove('paused'); musicBtn.setAttribute('aria-label', '暫停音樂');
+    } else {
+      bgm.pause(); musicBtn.classList.add('paused'); musicBtn.setAttribute('aria-label', '播放音樂');
+    }
+  });
+})();
+</script>
+</body>
+</html>
