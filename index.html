@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>蕭羽呈 × 劉雅蘭 ｜ 2026.11.22</title>
+<meta name="description" content="誠摯邀請您蒞臨婚禮，與我們一同分享人生最幸福的時刻。2026年11月22日，晶宴・日光香頌 B2 圓劇場。">
+
+<!-- 分享到 LINE / 訊息時的預覽卡片 -->
+<meta property="og:title" content="蕭羽呈 × 劉雅蘭 婚禮邀請">
+<meta property="og:description" content="2026.11.22（日）11:30 入席｜晶宴・日光香頌 B2 圓劇場">
+<meta property="og:image" content="assets/cover.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+TC:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className="js";</script>
+</head>
+<body class="is-sealed">
+
+<!-- ═══════════ 音樂 ═══════════ -->
+<audio id="bgm" loop preload="auto">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ═══════════ 一、信封開場 ═══════════ -->
+<div class="envelope-stage" id="stage">
+  <div class="stage-inner">
+
+    <div class="envelope" id="envelope">
+      <div class="env-card" aria-hidden="true">
+        <span class="env-card-mono">S<span class="amp">&amp;</span>O</span>
+        <span class="env-card-date">2026 . 11 . 22</span>
+      </div>
+      <div class="env-back"></div>
+      <div class="env-body"></div>
+      <div class="env-flap"></div>
+      <span class="pearl p1"></span><span class="pearl p2"></span>
+      <span class="pearl p3"></span><span class="pearl p4"></span>
+      <div class="ribbon-v"></div>
+      <div class="ribbon-h"></div>
+      <button class="seal" id="seal" type="button" aria-label="開啟喜帖">
+        <img src="assets/seal.png" alt="">
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ 主要內容 ═══════════ -->
+<main id="main">
+
+  <!-- 二、封面 -->
+  <section class="cover">
+    <img class="cover-img" src="assets/cover.jpg" alt="蕭羽呈與劉雅蘭的婚紗照" fetchpriority="high">
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- 三、刮開日期 -->
+  <section class="section scratch-sec" id="date">
+    <div class="arch">
+      <p class="eyebrow">Save the Date</p>
+      <h2 class="script">敬邀您記下這一天</h2>
+      <p class="lead">輕輕刮開</p>
+
+      <div class="scratch-row" id="scratchRow">
+        <div class="sc-cell">
+          <div class="sc-face"><b>22</b><small>日</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+        <div class="sc-cell">
+          <div class="sc-face"><b>11</b><small>月</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+        <div class="sc-cell">
+          <div class="sc-face"><b>2026</b><small>年</small></div>
+          <canvas class="sc-cover" width="1" height="1" aria-hidden="true"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 四、倒數 -->
+  <section class="section count-sec">
+    <p class="eyebrow">距離婚禮還有</p>
+    <div class="count" id="count">
+      <div class="c-unit"><b id="cD">--</b><small>天</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cH">--</b><small>時</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cM">--</b><small>分</small></div>
+      <div class="c-sep">:</div>
+      <div class="c-unit"><b id="cS">--</b><small>秒</small></div>
+    </div>
+    <p class="count-note" id="countNote">2026 年 11 月 22 日 11:30 入席</p>
+  </section>
+
+  <!-- 五、Dress Code -->
+  <section class="section dress-sec">
+    <p class="eyebrow">Dress Code</p>
+    <p class="lead">自由參考</p>
+    <ul class="swatches">
+      <li style="--c:#FCFCFC"></li>
+      <li style="--c:#E2D5CC"></li>
+      <li style="--c:#CDB9B0"></li>
+      <li style="--c:#C4C1C2"></li>
+      <li style="--c:#C9D1DD"></li>
+    </ul>
+  </section>
+
+  <!-- 六、喜帖本體 -->
+  <section class="section card-sec">
+    <div class="card-frame">
+      <img src="assets/invitation.jpg" alt="喜帖：蕭羽呈 × 劉雅蘭，2026年11月22日（日），11:30 入席、12:00 開席，地點晶宴・日光香頌 B2 圓劇場，台北市中山區民生東路三段8號B2，電話 02-2517-9977。">
+    </div>
+    <p class="card-note">長按圖片可儲存到相簿</p>
+  </section>
+
+  <!-- 七、結語 -->
+  <section class="section closing">
+    <div class="rule" aria-hidden="true"></div>
+    <p>我們的名字寫在請帖上，<br>但這一天真正想見的，是你。</p>
+    <p>謝謝你陪我們走過那些<br>很平常的日子，<br>也謝謝你願意空出這個中午。</p>
+    <p>那天，我們在圓劇場等你。</p>
+    <p class="sign">Shany &amp; Orange</p>
+    <div class="rule" aria-hidden="true"></div>
+  </section>
+
+  <footer class="foot">2026 . 11 . 22</footer>
+</main>
+
+<!-- 音樂開關 -->
+<button class="music-btn" id="musicBtn" type="button" aria-label="暫停音樂" hidden>
+  <svg viewBox="0 0 24 24" class="ico-pause" aria-hidden="true"><rect x="7.5" y="6" width="3" height="12" rx="1"/><rect x="13.5" y="6" width="3" height="12" rx="1"/></svg>
+  <svg viewBox="0 0 24 24" class="ico-play" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
