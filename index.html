@@ -67,15 +67,15 @@ html.js .seal-stage{
 
 .envelope{
   position:relative;
-  width:min(76vw,318px);
-  aspect-ratio:3/4;
+  width:min(88vw,372px);
+  aspect-ratio:1.42;
   perspective:1400px;
   filter:drop-shadow(0 26px 46px rgba(96,76,56,.32));
 }
 
 /* 內卡（收在信封裡，開封後升起） */
 .env-card{
-  position:absolute;left:7%;right:7%;top:6%;height:88%;
+  position:absolute;left:6%;right:6%;top:7%;height:86%;
   z-index:0;
   background:linear-gradient(160deg,#FFFFFF,#F8F3EB);
   border:1px solid rgba(210,196,176,.7);
@@ -84,10 +84,10 @@ html.js .seal-stage{
   transition:transform 1s cubic-bezier(.22,.9,.28,1) .55s,z-index 0s linear .55s;
 }
 .env-card-mono{
-  font-family:var(--serif);font-size:2.9rem;font-weight:300;
+  font-family:var(--serif);font-size:2.5rem;font-weight:300;
   letter-spacing:.12em;color:var(--ink);
 }
-.env-card-mono .amp{font-family:var(--script);font-size:1.9rem;color:var(--wax);margin:0 .06em}
+.env-card-mono .amp{font-family:var(--script);font-size:1.7rem;color:var(--wax);margin:0 .06em}
 .env-card-date{font-size:.92rem;letter-spacing:.36em;color:var(--ink-soft);text-indent:.36em}
 
 /* 信封背板 */
@@ -101,13 +101,13 @@ html.js .seal-stage{
 .env-body{
   position:absolute;inset:0;z-index:5;
   background:linear-gradient(155deg,#FFFDF9,#F3EBDF 68%,#E6DACA);
-  clip-path:polygon(0 26%,50% 61%,100% 26%,100% 100%,0 100%);
+  clip-path:polygon(0 22%,50% 57%,100% 22%,100% 100%,0 100%);
   box-shadow:0 -2px 6px rgba(150,128,102,.14);
 }
 
 /* 信封封口 */
 .env-flap{
-  position:absolute;top:0;left:0;right:0;height:62%;
+  position:absolute;top:0;left:0;right:0;height:58%;
   z-index:6;transform-origin:top center;
   background:linear-gradient(178deg,#FFFEFB,#F5EDE2 70%,#E3D6C4);
   filter:drop-shadow(0 3px 4px rgba(150,128,102,.16));
@@ -115,23 +115,12 @@ html.js .seal-stage{
   transition:transform 1.05s cubic-bezier(.5,0,.2,1) .3s,z-index 0s linear .7s;
 }
 .opened .env-flap{transform:rotateX(-174deg);z-index:3}
-.opened .env-card{transform:translateY(-34%);z-index:4}
-
-/* 珍珠 */
-.pearl{
-  position:absolute;z-index:7;width:11px;height:11px;border-radius:50%;
-  background:radial-gradient(circle at 32% 30%,#fff,#EDE4D8 55%,#CFC1AE);
-  box-shadow:0 1px 2px rgba(140,120,100,.35);
-  transition:opacity .5s ease;
-}
-.p1{top:12%;left:14%}.p2{top:18%;right:12%}
-.p3{bottom:14%;left:11%}.p4{bottom:10%;right:16%}
-.opened .pearl{opacity:0}
+.opened .env-card{transform:translateY(-42%);z-index:4}
 
 /* 火漆印章 */
 .seal{
   position:absolute;z-index:9;
-  top:50%;left:50%;width:36%;aspect-ratio:1;
+  top:50%;left:50%;width:27%;aspect-ratio:1;
   padding:0;border-radius:50%;
   transform:translate(-50%,-50%);
   filter:drop-shadow(0 8px 16px rgba(126,96,80,.45));
@@ -237,7 +226,7 @@ html.js #main.on{opacity:1}
 /* ─────────── 喜帖本體 ─────────── */
 
 .card-sec{padding-top:58px}
-.card-frame{border:1px solid var(--line);padding:9px;background:#fff;box-shadow:0 16px 36px rgba(140,120,100,.14)}
+.card-frame{border:1px solid var(--line);padding:0;background:#fff;line-height:0;box-shadow:0 16px 36px rgba(140,120,100,.14)}
 .card-note{margin:18px 0 0;font-size:.92rem;letter-spacing:.18em;color:#7B6D57}
 
 /* ─────────── 結語 ─────────── */
@@ -298,9 +287,6 @@ html.js #main.on{opacity:1}
     <div class="env-back"></div>
     <div class="env-body"></div>
     <div class="env-flap"></div>
-
-    <span class="pearl p1"></span><span class="pearl p2"></span>
-    <span class="pearl p3"></span><span class="pearl p4"></span>
 
     <button class="seal" id="seal" type="button" aria-label="開啟喜帖">
       <img src="seal.png" alt="">
